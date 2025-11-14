@@ -8,14 +8,12 @@ export class ChatUI {
     private sendButton: HTMLButtonElement;
     private userHistory: string[] = [];
     private historyIndex: number = -1;
-    private settings?: { persona: string; temperature: number; top_p: number; max_tokens: number; presence_penalty: number; frequency_penalty: number; top_k: number };
 
     constructor(
         containerId: string,
         onSend: (message: string) => void,
         settings?: { persona: string; temperature: number; top_p: number; max_tokens: number; presence_penalty: number; frequency_penalty: number; top_k: number }
     ) {
-        this.settings = settings;
         this.container = document.getElementById(containerId)!;
         this.container.innerHTML = '';
 
